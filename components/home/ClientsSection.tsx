@@ -3,14 +3,14 @@
 import Image from 'next/image'
 
 const ClientsSection = () => {
-    // 50 client logos - 10 per row
-    const allClients = Array.from({ length: 50 }, (_, i) => `/clients/client-${i + 1}.png`)
+    // 40 client logos - 10 per row (using actual jpg files)
+    const allClients = Array.from({ length: 40 }, (_, i) => `/clients/client-${i}.jpg`)
 
     const row1 = allClients.slice(0, 10)
     const row2 = allClients.slice(10, 20)
     const row3 = allClients.slice(20, 30)
     const row4 = allClients.slice(30, 40)
-    const row5 = allClients.slice(40, 50)
+    const row5 = allClients.slice(0, 10) // Reuse first 10 for 5th row
 
     const LogoRow = ({
         logos,

@@ -32,10 +32,10 @@ const ServicesSection = () => {
             <span className="text-[#112C41] font-semibold">Machines</span>
             <div className="relative w-32 h-16 md:w-40 md:h-20 rounded-full overflow-hidden inline-block">
               <Image
-                src="/handshake.jpg"
+                src="/hand.png"
                 alt="Partnership"
                 fill
-                className="object-cover"
+                className="object-cover bg-[#112C41]"
               />
             </div>
             <span className="text-gray-400 font-light">We provide you a</span>

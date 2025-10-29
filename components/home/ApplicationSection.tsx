@@ -22,14 +22,14 @@ const ApplicationSection = () => {
             href: '/applications/welding',
         },
         {
-            title: 'MATERIAL HANDLING',
-            image: '/app-handling.jpg',
-            href: '/applications/handling',
+            title: 'GRINDING & POLISHING',
+            image: '/app-grinding.jpg',
+            href: '/applications/grinding',
         },
         {
-            title: 'ASSEMBLY',
-            image: '/app-assembly.jpg',
-            href: '/applications/assembly',
+            title: 'LOADING & UNLOADING',
+            image: '/app-loading.jpg',
+            href: '/applications/loading',
         },
     ]
 
