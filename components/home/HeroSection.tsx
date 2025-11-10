@@ -14,7 +14,7 @@ const HeroSection = () => {
     },
      {
       image: '/hero.png',
-      title: 'Robot factory automation concepts, designing and simulations  ',
+      title: 'Robot factory automation designing and simulations  ',
     },
   ]
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
             
             {/* Title Overlay */}
             <div className="absolute inset-0 flex items-center justify-center px-4">
-              <h1 className="text-white text-4xl md:text-5xl lg:text-7xl font-light text-center max-w-5xl leading-tight">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-7xl font-semibold text-center max-w-5xl leading-tight">
                 {slide.title}
               </h1>
             </div>
@@ -100,12 +100,12 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom Banner */}
-      <div className="bg-[#112C41] text-white py-6 md:py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
-            ENGINEERING INNOVATION{' '}
-            <span className="italic font-serif">since</span>{' '}
-            <span className="font-semibold">1974</span>
+      <div className="bg-[#112C41] text-white py-8 md:py-10 lg:py-12">
+        <div className="w-full px-6 md:px-12 lg:px-16 text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide leading-tight">
+            <span className="text-gray-400">ENGINEERING INNOVATION</span>{' '}
+            <span className="italic font-serif text-gray-300">since</span>{' '}
+            <span className="font-bold text-white">1974</span>
           </h2>
         </div>
       </div>
