@@ -138,7 +138,7 @@ const ApplicationSection = () => {
                 <div className="flex justify-between items-start mb-12">
                     <div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#112C41] font-light">
-                            APPLICATION
+                            Application
                         </h2>
                         <p className="text-2xl md:text-3xl text-[#112C41] mt-2">
                             designed to <span className="italic font-serif">redefine</span>
