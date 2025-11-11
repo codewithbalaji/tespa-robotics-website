@@ -10,13 +10,21 @@ const HeroSection = () => {
 
   const slides = [
     {
-      image: '/hero.png',
-      title: 'Redefining Robotics For The Factories Of Tomorrow',
+      image: '/slide1.jpg',
+      title: 'Contributing the world of manufacturer with latest high speed robots',
     },
      {
-      image: '/hero.png',
-      title: 'Robot factory automation designing and simulations  ',
+      image: '/slide2.jpg',
+      title: 'Tespa partnering with pioneers in robot technology',
     },
+     {
+      image: '/slide3.jpg',
+      title: 'Exclusive welding technologies with excellent welds',
+    },
+     {
+      image: '/slide4.jpg',
+      title: 'Robot factory automation concepts, designing and simulations',
+    }
   ]
 
   const nextSlide = () => {
