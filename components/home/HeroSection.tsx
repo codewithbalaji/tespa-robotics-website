@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -59,9 +60,20 @@ const HeroSection = () => {
             
             {/* Title Overlay */}
             <div className="absolute inset-0 flex items-center justify-center px-4">
-              <h1 className="text-white text-4xl md:text-5xl lg:text-7xl font-semibold text-center max-w-5xl leading-tight">
-                {slide.title}
-              </h1>
+              <AnimatePresence mode="wait">
+                {index === currentSlide && (
+                  <motion.h1
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -30 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="text-white text-4xl md:text-5xl lg:text-7xl font-semibold text-center max-w-5xl leading-tight"
+                  >
+                    {slide.title}
+                  </motion.h1>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         ))}
@@ -100,15 +112,41 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom Banner */}
-      <div className="bg-[#112C41] text-white py-8 md:py-10 lg:py-12">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="bg-[#112C41] text-white py-8 md:py-10 lg:py-12"
+      >
         <div className="w-full px-6 md:px-12 lg:px-16 text-center">
           <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide leading-tight">
-            <span className="text-gray-400">ENGINEERING INNOVATION</span>{' '}
-            <span className="italic font-serif text-gray-300">since</span>{' '}
-            <span className="font-bold text-white">1974</span>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="text-gray-400 inline-block"
+            >
+              ENGINEERING INNOVATION
+            </motion.span>{' '}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="italic font-serif text-gray-300 inline-block"
+            >
+              since
+            </motion.span>{' '}
+            <motion.span
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              className="font-bold text-white inline-block"
+            >
+              1974
+            </motion.span>
           </h2>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

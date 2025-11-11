@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const ClientsSection = () => {
     // 40 client logos - 10 per row (using actual jpg files)
@@ -77,13 +78,19 @@ const ClientsSection = () => {
         }
       `}</style>
 
-            <section className="bg-[#112C41] pt-16 md:pt-20 pb-12 md:pb-16">
+            <section className="bg-[#112C41] pt-16 md:pt-20 pb-12 md:pb-16 overflow-hidden">
                 {/* Header */}
-                <div className="text-center mb-16 md:mb-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 md:mb-20"
+                >
                     <h2 className="text-3xl md:text-4xl lg:text-5xl text-white">
                         TRUSTED BY <span className="italic font-serif">Industry Leaders</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Logo Rows */}
                 <div>
