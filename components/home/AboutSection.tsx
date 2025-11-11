@@ -12,16 +12,6 @@ const AboutSection = () => {
   return (
     <section ref={ref} className="bg-gray-100 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* About Label */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <span className="text-gray-500 text-sm md:text-base">• About</span>
-        </motion.div>
-
         {/* Main Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
