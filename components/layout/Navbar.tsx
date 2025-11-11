@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -11,6 +11,18 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   const applicationsDropdown = [
     { name: 'SPOT WELDING', href: '/applications/spot-welding' },
@@ -48,7 +60,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="w-full bg-white/80 backdrop-blur-md border-b border-white/20 sticky top-0 z-50">
+    <nav className="w-full bg-white/80 backdrop-blur-md border-b border-white/20 sticky top-0 z-50 relative">
       {/* Mobile Navbar */}
       <div className="lg:hidden flex items-center justify-between px-6 py-4">
         <button
@@ -252,7 +264,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-white/20 shadow-lg">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg max-h-[calc(100vh-80px)] overflow-y-auto z-50">
           <div className="px-6 py-6 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
